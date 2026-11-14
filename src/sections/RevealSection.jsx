@@ -18,7 +18,8 @@ export default function RevealSection() {
 
         <div className="why">
           <h4>WHY DID I DO THIS?</h4>
-          <p>The festive season is here, and unfortunately, scammers are also getting busy.</p>
+          <h5>Because why not? I had a laptop, an idea, AI, and way too much free time 😭😂.</h5>
+          <p>The festive season is here, and unfortunately, scammers are also getting busy😭💀.</p>
           <p>
             Between exciting promotions, giveaways, competitions, delivery notifications and seemingly harmless
             offers, it is easy to get carried away and click on links without thinking twice. Sometimes, we trust
@@ -29,10 +30,11 @@ export default function RevealSection() {
             offers and never share passwords or sensitive information on unfamiliar websites.
             A moment of caution could save you from a very unpleasant experience.
           </p>
+          <h4>Feel free to send this to that one family member who clicks on EVERYTHINGGGG. Heiiii😭😭💀</h4>
         </div>
 
         {fell
-          ? <p className="thanks">Honesty noted 💜 Now go warn a friend.</p>
+          ? <p className="thanks">Honesty noted 💜 Stay Safe.</p>
           : <button type="button" className="btn-fun" onClick={() => setFell(true)}>OKAY, I FELL FOR IT 😂</button>}
       </div>
     </section>

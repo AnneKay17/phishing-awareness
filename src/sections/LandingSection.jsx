@@ -5,7 +5,7 @@ export default function LandingSection() {
   return (
     <section id="landing" className="section">
       <div className="section__inner rise">
-        <StatusBar left="SEC://ALERT" right="STATUS: COMPROMISED" dot />
+        <StatusBar right="STATUS: COMPROMISED" dot />
         <p className="kicker">SECURITY ALERT</p>
         <h1 className="title">YOU'VE BEEN CAUGHT.</h1>
         <p className="text">
