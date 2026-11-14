@@ -1,7 +1,6 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import LandingSection from './sections/LandingSection.jsx';
 import RansomSection from './sections/RansomSection.jsx';
 import RevealSection from './sections/RevealSection.jsx';
 
@@ -16,44 +15,11 @@ export default function App() {
 
   const [stage, setStage] = useState('idle');
 
-  // Prevent duplicate scrolling and reveal transitions.
-  const autoScrolled = useRef(false);
+  // Prevent duplicate reveal transitions.
   const revealStarted = useRef(false);
 
-  // LANDING -> RANSOM AUTOMATIC SCROLL
-  useEffect(() => {
-    if (stage !== 'idle') return;
-
-    const landingTimer = setTimeout(() => {
-      if (autoScrolled.current) return;
-
-      const landing = document.getElementById('landing');
-      const ransom = document.getElementById('ransom');
-
-      if (!landing || !ransom) return;
-
-      const rect = landing.getBoundingClientRect();
-
-      const stillOnLanding =
-        rect.top < window.innerHeight * 0.5 &&
-        rect.bottom > window.innerHeight * 0.5;
-
-      if (stillOnLanding) {
-        autoScrolled.current = true;
-
-        ransom.scrollIntoView({
-          behavior: reduced ? 'auto' : 'smooth',
-          block: 'start'
-        });
-      }
-    }, 5000);
-
-    return () => clearTimeout(landingTimer);
-  }, [stage, reduced]);
-
-  // REVEAL TRANSITION
+  // HANDLE REVEAL
   const handleProtect = useCallback(async () => {
-    // Prevent the button and automatic timer from triggering twice.
     if (revealStarted.current) return;
 
     revealStarted.current = true;
@@ -92,7 +58,7 @@ export default function App() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !revealStarted.current) {
-          // Start the countdown once the ransom screen is visible.
+          // Start the countdown when the ransom screen appears.
           revealTimer = setTimeout(() => {
             handleProtect();
           }, 5000);
@@ -125,8 +91,6 @@ export default function App() {
         </>
       ) : (
         <main>
-          <LandingSection />
-
           <RansomSection
             onProtect={handleProtect}
             glitching={stage === 'glitch'}
