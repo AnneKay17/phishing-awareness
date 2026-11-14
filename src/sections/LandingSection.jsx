@@ -9,11 +9,9 @@ export default function LandingSection() {
         <p className="kicker">SECURITY ALERT</p>
         <h1 className="title">YOU'VE BEEN CAUGHT.</h1>
         <p className="text">
-          Do you know how easy it is to get scammed?<br />
-          You clicked a link without even checking the URL.<br />
-          And you trusted me? Interesting.
+          Your data has been compromised!
         </p>
-        <p className="text">Scroll down. We need to talk.</p>
+        <p className="text">Scroll down to protect your data.</p>
       </div>
       <button type="button" className="scroll-hint" onClick={goNext} aria-label="Scroll to next section">
         SCROLL DOWN<span className="chev" aria-hidden="true">⌄</span>
