@@ -16,7 +16,7 @@ export default function AccountDetailsSection() {
         {rows.map(([label, value]) => (
           <div className="row" key={label}><span>{label}</span><span>{value}</span></div>
         ))}
-        <p className="note">// fictional values. nothing is read from you.</p>
+        <p className="note"></p>
       </div>
     </section>
   );
