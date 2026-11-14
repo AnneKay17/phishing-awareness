@@ -29,7 +29,7 @@ export default function ScanSection({ onComplete }) {
     <section id="scan" className="section" ref={ref}>
       <div className="section__inner">
         <StatusBar right={`SCAN ${progress}%`} />
-        <h2 className="title">WAIT. DON'T LEAVE.<br /><span className="red">I HAVE YOUR DETAILS.</span></h2>
+        <h2 className="title">DON'T LEAVE YET.<br /><span className="red">I HAVE YOUR DETAILS.</span></h2>
         <div className="term" aria-live="polite">
           {MESSAGES.map((m, i) => progress >= i * 25 && (
             <p key={m}>&gt; {m} {progress >= (i + 1) * 25 ? <span className="ok">OK</span> : <span className="caret">█</span>}</p>
