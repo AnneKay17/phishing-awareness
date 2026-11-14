@@ -1,0 +1,11 @@
+:root {
+  /* Identity A: threat interface */
+  --a-bg: #0a0a0b; --a-panel: #141416; --a-line: #26262a;
+  --a-red: #c4161c; --a-red-bright: #ff4a4a; --a-text: #e8e8ea; --a-muted: #a0a0a8;
+  --a-glow: rgba(225, 29, 42, 0.5);
+  /* Identity B: AnneKay */
+  --b-deep: #2e1065; --b-violet: #6d28d9; --b-neon: #d946ef; --b-lav: #c4b5fd; --b-ice: #f5f3ff;
+  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --font-fun: 'Fredoka', system-ui, sans-serif;
+  --pad: clamp(20px, 6vw, 96px);
+}

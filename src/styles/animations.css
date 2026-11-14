@@ -1,0 +1,28 @@
+@keyframes blink{50%{opacity:0}}
+@keyframes bob{50%{transform:translateY(6px)}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+@keyframes jitter{0%{transform:translate(0)}25%{transform:translate(-5px,2px)}50%{transform:translate(5px,-2px)}75%{transform:translate(-3px,-1px)}100%{transform:translate(0)}}
+@keyframes fall{from{transform:translateY(-12vh) rotate(0)}to{transform:translateY(112vh) rotate(var(--rot))}}
+
+.rise{animation:rise .9s ease both}
+.pop{animation:pop .8s cubic-bezier(.2,1.2,.4,1) both}
+.fade{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}
+.fade.in{opacity:1;transform:none}
+
+/* Short glitch on the ransom section: 2 quick cycles, no strobing */
+.glitch .title,.glitch .btn-threat{animation:jitter .15s steps(2) 2;text-shadow:3px 0 #fff,-3px 0 #7a0c10}
+
+/* Full-screen black veil used by the transition */
+.veil{position:fixed;inset:0;background:#000;opacity:0;pointer-events:none;z-index:50;transition:opacity .4s ease}
+.veil--dark{opacity:1;pointer-events:all}
+.veil--revealed{transition-duration:.9s}
+
+.confetti{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:40}
+.confetti i{position:absolute;top:0;border-radius:2px;animation:fall linear forwards}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .fade{opacity:1;transform:none}
+}
