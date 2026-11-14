@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState } from 'react';
 import LandingSection from './sections/LandingSection.jsx';
 import ScanSection from './sections/ScanSection.jsx';
-import AccountDetailsSection from './sections/AccountDetailsSection.jsx';
+//import AccountDetailsSection from './sections/AccountDetailsSection.jsx';
 import RansomSection from './sections/RansomSection.jsx';
 import RevealSection from './sections/RevealSection.jsx';
 import Confetti from './components/animations/Confetti.jsx';
@@ -50,7 +50,7 @@ export default function App() {
         <main>
           <LandingSection />
           <ScanSection onComplete={handleScanComplete} />
-          <AccountDetailsSection />
+
           <RansomSection onProtect={handleProtect} glitching={stage === 'glitch'} />
         </main>
       )}
