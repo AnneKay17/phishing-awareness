@@ -12,7 +12,7 @@ export default function AccountDetailsSection() {
   return (
     <section id="account" className="section" ref={ref}>
       <div className={`section__inner fade ${seen ? 'in' : ''}`}>
-        <StatusBar left="SECURITY REPORT" right="DEMO DATA" />
+        <StatusBar left="SECURITY REPORT" right="DATA" />
         {rows.map(([label, value]) => (
           <div className="row" key={label}><span>{label}</span><span>{value}</span></div>
         ))}
